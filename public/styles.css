@@ -13,6 +13,7 @@ body {
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
+	margin: auto;
 }
 h1 {
 	color: rgb(233, 159, 0);
@@ -38,6 +39,7 @@ header {
 	background-color: white;
 	width: 100%;
 	margin-bottom: 40px;
+	height: 20%;
 }
 .header-box {
 	padding: 20px;
@@ -74,13 +76,16 @@ sub {
 .error-msg {
 	color: crimson;
 }
+header {
+	height: 20%;
+}
 .container {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: row;
 	gap: 60px;
-	height: 70vh;
+	height: 80%;
 	width: 1150px;
 }
 .leftContainer {
@@ -88,7 +93,7 @@ sub {
 	justify-content: center;
 	flex-direction: column;
 	height: 100%;
-	width: 700px;
+	width: 70%;
 	padding: 60px;
 	background: rgb(248, 248, 248);
 	border-radius: 2px;
@@ -170,9 +175,10 @@ button:hover,
 }
 .item {
 	list-style: none;
-	line-height: 2em;
+	line-height: 1.8em;
 	color: black;
 	cursor: pointer;
+	font-size: 1.2em;
 }
 .item:hover {
 	color: rgb(233, 159, 0);
@@ -186,4 +192,105 @@ footer {
 }
 #footer-msg {
 	align-self: center;
+}
+
+/* Media Queries */
+
+/* Tablet (portrait and landscape) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+	/* Add tablet-specific styles here */
+	body {
+		font-size: 2em;
+		width: fit-content;
+	}
+	.wrapper {
+		width: fit-content;
+	}
+	.container {
+		padding: 30px;
+		flex-direction: column;
+		/* width:fit-content; */
+	}
+	.leftContainer {
+		width: 100%;
+	}
+	.rightContainer {
+		width: 100%;
+	}
+	footer {
+		padding: 0 30px;
+	}
+}
+
+/* Mobile (portrait and landscape) */
+@media screen and (max-width: 480px) {
+	/* Add mobile-specific styles here */
+	body {
+		font-size: 2.3em;
+		width: fit-content;
+	}
+	header {
+		width: 100%;
+	}
+	.logo {
+		width: 3em;
+	}
+
+	nav {
+		display: none;
+	}
+	.header-box {
+		justify-content: start;
+		width: 100%;
+	}
+	.container {
+		flex-direction: column;
+		width: clamp(330px, 100%, 100%);
+		padding: 10px;
+	}
+	.leftContainer,
+	.rightContainer {
+		/* width: clamp(330px, 80%, 410px); */
+		width: 90%;
+		padding: 50px;
+	}
+
+	.selectInputFieldsBox {
+		flex-direction: column;
+	}
+	.from-dropdown,
+	.to-dropdown {
+		width: 100%;
+	}
+	.inputFieldsBox,
+	.outputBox,
+	.buttonBox {
+		width: 100%;
+	}
+	.buttonBox button {
+		width: inherit;
+		margin: 10px 0;
+	}
+	footer {
+		padding: 20px;
+	}
+	label
+	{
+		margin-top: 20px;
+		font-size: 1.2em;
+	}
+	select,
+	input,
+	option {
+		padding: 30px;
+		font-size: 1.2em;
+		border: 1px solid #555555;
+	}
+	button {
+		padding: 30px 30px;
+		font-size: 1em;
+		border: 1px solid #555555;
+		font-weight: 500;
+		cursor: pointer;
+	}
 }
